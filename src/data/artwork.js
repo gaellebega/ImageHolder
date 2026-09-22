@@ -7,6 +7,13 @@ const artwork = [
     image: "src/images/image1.jpg",
   },
     {
+    id: 1,
+    title: "Untitled I",
+    artist: "Artist Name",
+    year: 2026,
+    image: "src/images/image1.jpg",
+  },
+    {
     id: 2,
     title: "Untitled I",
     artist: "Artist Name",
@@ -19,6 +26,13 @@ const artwork = [
     artist: "Artist Name",
     year: 2026,
     image: "src/images/image3.jpg",
+  },
+    {
+    id: 1,
+    title: "Untitled I",
+    artist: "Artist Name",
+    year: 2026,
+    image: "src/images/image1.jpg",
   },
     {
     id: 4,
@@ -42,5 +56,6 @@ const artwork = [
     image: "src/images/image1.jpg",
   },
 ];
+
 
 export default artwork;
