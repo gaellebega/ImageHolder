@@ -1,65 +1,92 @@
-
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  return (
-    <nav className="w-full flex items-center justify-between px-8 py-6 bg-white">
-      
-      {/* Logo / Brand Name */}
-      <Link
-        to="/"
-        className="text-2xl font-bold text-gray-900"
-      >
-        Empire Design
-      </Link>
+  const [menuOpen, setMenuOpen] = useState(false);
 
-      {/* Navigation */}
-      <div className="flex items-center gap-8">
+const linkStyle =
+  "relative cursor-pointer after:absolute after:left-[-4px] after:right-[-4px] after:-bottom-1 after:h-[2px] after:bg-black after:scale-x-0 hover:after:scale-x-100 after:transition-transform";
+  return (
+    <nav className="w-full bg-white px-8 py-6">
+
+      {/* Top Navbar */}
+      <div className="flex items-center justify-between">
+
+        {/* Empire Design */}
         <Link
           to="/"
-          className="text-gray-700 hover:text-black"
+          className="text-black text-2xl font-normal cursor-pointer"
         >
-          Home
+          EMPIRE DESIGN.
         </Link>
 
-        <Link
-          to="/gallery"
-          className="text-gray-700 hover:text-black"
-        >
-          Gallery
-        </Link>
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex w-96 items-center justify-evenly text-black">
+          <Link
+            to="/key-art"
+            className={linkStyle}
+          >
+            KEY ART
+          </Link>
 
-        <Link
-          to="/about"
-          className="text-gray-700 hover:text-black"
-        >
-          About
-        </Link>
+          <Link
+            to="/av"
+            className={linkStyle}
+          >
+            AV
+          </Link>
 
-        <Link
-          to="/contact"
-          className="text-gray-700 hover:text-black"
+          <Link
+            to="/contact"
+            className={linkStyle}
+          >
+            CONTACT
+          </Link>
+        </div>
+
+        {/* Mobile Hamburger */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden flex flex-col gap-1.5 cursor-pointer"
+          aria-label="Open menu"
         >
-          Contact
-        </Link>
+          <span className="w-7 h-0.5 bg-black"></span>
+          <span className="w-7 h-0.5 bg-black"></span>
+          <span className="w-7 h-0.5 bg-black"></span>
+        </button>
+
       </div>
 
-      {/* Buttons */}
-      <div className="flex items-center gap-4">
-        <Link
-          to="/login"
-          className="text-gray-700 hover:text-black"
-        >
-          Sign In
-        </Link>
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden flex flex-col items-end gap-5 pt-6 text-black">
 
-        <Link
-          to="/signup"
-          className="px-5 py-2.5 rounded-lg bg-black text-white hover:bg-gray-800"
-        >
-          Sign Up
-        </Link>
-      </div>
+          <Link
+            to="/key-art"
+            onClick={() => setMenuOpen(false)}
+            className={linkStyle}
+          >
+            KEY ART
+          </Link>
+
+          <Link
+            to="/av"
+            onClick={() => setMenuOpen(false)}
+            className={linkStyle}
+          >
+            AV
+          </Link>
+
+          <Link
+            to="/contact"
+            onClick={() => setMenuOpen(false)}
+            className={linkStyle}
+          >
+            CONTACT
+          </Link>
+
+        </div>
+      )}
 
     </nav>
   );

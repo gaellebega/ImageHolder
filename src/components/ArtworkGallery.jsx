@@ -1,26 +1,12 @@
 import ArtworkCard from "./ArtworkCard";
-import  artwork  from "../data/artwork";
+import artwork from "../data/artwork";
 
 function ArtworkGallery() {
-  const offsets = [
-    "",
-    "translate-y-2",
-    "-translate-y-1",
-    "translate-y-3",
-    "-translate-y-2",
-    "translate-y-1",
-    "",
-    "-translate-y-1",
-  ];
-
   return (
-    <section className="bg-white p-[3px]">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[3px]">
-        {artwork.map((item, index) => (
-          <div
-            key={item.id}
-            className={offsets[index % offsets.length]}
-          >
+    <section className="bg-white px-10 pt-12 pb-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {artwork.map((item) => (
+          <div key={item.id} className="w-full">
             <ArtworkCard artwork={item} />
           </div>
         ))}
