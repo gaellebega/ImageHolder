@@ -1,61 +1,37 @@
+import image1 from "./images/image1.jpg";
+import image2 from "./images/image2.jpg";
+import image3 from "./images/image3.jpg";
+import image4 from "./images/image4.jpg";
+
 const artwork = [
   {
     id: 1,
     title: "Untitled I",
     artist: "Artist Name",
     year: 2026,
-    image: "src/images/image1.jpg",
+    image: image1,
   },
-    {
-    id: 1,
-    title: "Untitled I",
-    artist: "Artist Name",
-    year: 2026,
-    image: "src/images/image1.jpg",
-  },
-    {
+  {
     id: 2,
-    title: "Untitled I",
+    title: "Untitled II",
     artist: "Artist Name",
     year: 2026,
-    image: "src/images/image2.jpg",
+    image: image2,
   },
-    {
+  {
     id: 3,
-    title: "Untitled I",
+    title: "Untitled III",
     artist: "Artist Name",
     year: 2026,
-    image: "src/images/image3.jpg",
+    image: image3,
   },
-    {
-    id: 1,
-    title: "Untitled I",
-    artist: "Artist Name",
-    year: 2026,
-    image: "src/images/image1.jpg",
-  },
-    {
+  {
     id: 4,
-    title: "Untitled I",
+    title: "Untitled IV",
     artist: "Artist Name",
     year: 2026,
-    image: "src/images/image4.jpg",
-  },
-   {
-    id: 3,
-    title: "Untitled I",
-    artist: "Artist Name",
-    year: 2026,
-    image: "src/images/image3.jpg",
-  },
-    {
-    id: 1,
-    title: "Untitled I",
-    artist: "Artist Name",
-    year: 2026,
-    image: "src/images/image1.jpg",
+    image: image4,
   },
 ];
-
 
 export default artwork;
