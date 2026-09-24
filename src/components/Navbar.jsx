@@ -4,43 +4,43 @@ import { Link } from "react-router-dom";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-const linkStyle =
-  "relative cursor-pointer after:absolute after:left-[-4px] after:right-[-4px] after:-bottom-1 after:h-[2px] after:bg-black after:scale-x-0 hover:after:scale-x-100 after:transition-transform";
+  const linkStyle =
+    "relative cursor-pointer font-sans font-normal tracking-[0.02em] after:absolute after:left-[-4px] after:right-[-4px] after:-bottom-1 after:h-[1.5px] after:bg-black after:scale-x-0 hover:after:scale-x-100 after:transition-transform";
+
   return (
     <nav className="w-full bg-white px-8 py-6">
-
       {/* Top Navbar */}
       <div className="flex items-center justify-between">
 
-        {/* Empire Design */}
+        {/* Empire Design Logo */}
         <Link
           to="/"
-          className="text-black text-2xl font-normal cursor-pointer"
+          className="font-cormorant text-black text-2xl font-bold tracking-[0.22em] cursor-pointer"
         >
           EMPIRE DESIGN.
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex w-96 items-center justify-evenly text-black">
+        <div className="hidden md:flex w-96 items-center justify-evenly text-black text-[17px]">
           <Link
             to="/key-art"
             className={linkStyle}
           >
-            KEY ART
+            Key Art
           </Link>
 
           <Link
             to="/av"
             className={linkStyle}
           >
-            AV
+            Av
           </Link>
 
           <Link
             to="/contact"
             className={linkStyle}
           >
-            CONTACT
+            Contact
           </Link>
         </div>
 
@@ -54,19 +54,17 @@ const linkStyle =
           <span className="w-7 h-0.5 bg-black"></span>
           <span className="w-7 h-0.5 bg-black"></span>
         </button>
-
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden flex flex-col items-end gap-5 pt-6 text-black">
-
           <Link
             to="/key-art"
             onClick={() => setMenuOpen(false)}
             className={linkStyle}
           >
-            KEY ART
+            Key Art
           </Link>
 
           <Link
@@ -82,12 +80,10 @@ const linkStyle =
             onClick={() => setMenuOpen(false)}
             className={linkStyle}
           >
-            CONTACT
+            Contact
           </Link>
-
         </div>
       )}
-
     </nav>
   );
 }
