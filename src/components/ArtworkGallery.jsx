@@ -4,13 +4,25 @@ import artwork from "../data/artwork";
 function ArtworkGallery() {
   return (
     <section className="bg-white px-10 pt-12 pb-8">
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      {/* MOBILE */}
+      <div className="md:hidden grid grid-cols-2 gap-3">
         {artwork.map((item) => (
           <div key={item.id} className="w-full">
             <ArtworkCard artwork={item} />
           </div>
         ))}
       </div>
+
+      {/* DESKTOP */}
+      <div className="hidden md:grid md:grid-cols-3 gap-4">
+        {artwork.map((item) => (
+          <div key={item.id} className="w-full">
+            <ArtworkCard artwork={item} />
+          </div>
+        ))}
+      </div>
+
     </section>
   );
 }

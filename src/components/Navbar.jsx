@@ -5,16 +5,18 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const linkStyle =
-    "relative cursor-pointer font-sans font-normal tracking-[0.02em] after:absolute after:left-[-4px] after:right-[-4px] after:-bottom-1 after:h-[1.5px] after:bg-black after:scale-x-0 hover:after:scale-x-100 after:transition-transform";
+    "relative cursor-pointer font-sans font-normal tracking-[0.02em] after:absolute after:left-[-4px] after:right-[-4px] after:-bottom-2 after:h-[1.5px] after:bg-black after:scale-x-0 hover:after:scale-x-100 after:transition-transform";
 
   return (
     <nav className="w-full bg-white px-8 py-6">
+
       {/* Top Navbar */}
-      <div className="flex items-center justify-between">
+      <div className="relative z-50 flex items-center justify-between">
 
         {/* Empire Design Logo */}
         <Link
           to="/"
+          onClick={() => setMenuOpen(false)}
           className="font-cormorant text-black text-2xl font-bold tracking-[0.22em] cursor-pointer"
         >
           EMPIRE DESIGN.
@@ -22,66 +24,70 @@ function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex w-96 items-center justify-evenly text-black text-[17px]">
-          <Link
-            to="/key-art"
-            className={linkStyle}
-          >
+          <Link to="/key-art" className={linkStyle}>
             Key Art
           </Link>
 
-          <Link
-            to="/av"
-            className={linkStyle}
-          >
+          <Link to="/av" className={linkStyle}>
             Av
           </Link>
 
-          <Link
-            to="/contact"
-            className={linkStyle}
-          >
+          <Link to="/contact" className={linkStyle}>
             Contact
           </Link>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1.5 cursor-pointer"
-          aria-label="Open menu"
+          className="md:hidden relative w-10 h-10 flex items-center justify-center cursor-pointer"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          <span className="w-7 h-0.5 bg-black"></span>
-          <span className="w-7 h-0.5 bg-black"></span>
-          <span className="w-7 h-0.5 bg-black"></span>
+          {menuOpen ? (
+            /* X */
+            <span className="absolute text-black text-5xl font-light leading-none">
+              ×
+            </span>
+          ) : (
+            /* Two-line hamburger */
+            <span className="flex flex-col gap-2">
+              <span className="w-8 h-[2px] bg-black"></span>
+              <span className="w-8 h-[2px] bg-black"></span>
+            </span>
+          )}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Full-Screen Menu */}
       {menuOpen && (
-        <div className="md:hidden flex flex-col items-end gap-5 pt-6 text-black">
-          <Link
-            to="/key-art"
-            onClick={() => setMenuOpen(false)}
-            className={linkStyle}
-          >
-            Key Art
-          </Link>
+        <div className="fixed inset-0 z-40 bg-white flex items-center justify-center">
 
-          <Link
-            to="/av"
-            onClick={() => setMenuOpen(false)}
-            className={linkStyle}
-          >
-            AV
-          </Link>
+          <div className="flex flex-col items-center gap-10 text-black text-4xl">
+            <Link
+              to="/key-art"
+              onClick={() => setMenuOpen(false)}
+              className={linkStyle}
+            >
+              Key Art
+            </Link>
 
-          <Link
-            to="/contact"
-            onClick={() => setMenuOpen(false)}
-            className={linkStyle}
-          >
-            Contact
-          </Link>
+            <Link
+              to="/av"
+              onClick={() => setMenuOpen(false)}
+              className={linkStyle}
+            >
+              AV
+            </Link>
+
+            <Link
+              to="/contacts"
+              onClick={() => setMenuOpen(false)}
+              className={linkStyle}
+            >
+              Contact
+            </Link>
+          </div>
+
         </div>
       )}
     </nav>
