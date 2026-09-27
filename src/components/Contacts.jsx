@@ -7,11 +7,9 @@ import {
 function Contacts() {
   return (
     <main className="min-h-screen bg-white px-10 pt-12 pb-6">
-
+      
       {/* CONTENT */}
       <section className="max-w-6xl mx-auto">
-
-        {/* THREE COLUMNS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
 
           {/* KIGALI */}
@@ -20,7 +18,7 @@ function Contacts() {
               Kigali
             </h1>
 
-            <div className="font-sans text-[15px] md:text-[17px] font-light text-gray-600 tracking-[0.08em] leading-8">
+            <div className="font-sans text-[15px] md:text-[17px] font-light text-black tracking-[0.08em] leading-8">
               <p>cityofkigali@gmail.com</p>
               <p>KG 7 Avenue, Kigali, Rwanda</p>
               <p>+250 788 456 789</p>
@@ -33,7 +31,7 @@ function Contacts() {
               Physical Place
             </h2>
 
-            <p className="font-sans text-[15px] md:text-[17px] font-light text-gray-600 tracking-[0.08em] leading-8">
+            <p className="font-sans text-[15px] md:text-[17px] font-light text-black tracking-[0.08em] leading-8">
               Kigali Creative House
             </p>
           </div>
@@ -44,7 +42,7 @@ function Contacts() {
               Socials
             </h2>
 
-            <div className="font-sans text-[15px] md:text-[17px] font-light text-gray-600 tracking-[0.08em] leading-8">
+            <div className="font-sans text-[15px] md:text-[17px] font-light text-black tracking-[0.08em] leading-8">
               <p>Twitter</p>
               <p>Pinterest</p>
               <p>Instagram</p>
@@ -52,7 +50,6 @@ function Contacts() {
           </div>
 
         </div>
-
       </section>
 
       {/* FOOTER */}
@@ -97,7 +94,6 @@ function Contacts() {
         </div>
 
       </footer>
-
     </main>
   );
 }
