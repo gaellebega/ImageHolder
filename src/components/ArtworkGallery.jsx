@@ -1,45 +1,84 @@
-import ArtworkCard from "./ArtworkCard";
+import { Link } from "react-router-dom";
 import artwork from "../data/artwork";
 
 function ArtworkGallery() {
-  return (
-    <section className="bg-white px-10 pt-12 pb-8">
+  const mainArtwork = artwork[0];
+  const otherArtwork = artwork.slice(1);
 
-      {/* MOBILE */}
+  return (
+    <main className="bg-white min-h-screen px-4 md:px-8 pb-10">
+
+      {/* ================= MOBILE ================= */}
       <div className="md:hidden">
 
-        {/* FIRST IMAGE - FULL WIDTH */}
-        {artwork[0] && (
-          <div className="w-full mb-4">
-            <ArtworkCard
-              artwork={artwork[0]}
-              featured={true}
-            />
-          </div>
-        )}
-
-        {/* NEXT IMAGES - 2 COLUMNS × 3 ROWS */}
-        <div className="grid grid-cols-2 gap-4">
-          {artwork.slice(1, 7).map((item) => (
-            <div key={item.id} className="w-full">
-              <ArtworkCard artwork={item} />
+        {/* MAIN IMAGE */}
+        <section className="mb-4">
+          <Link
+            to={`/key-art/${mainArtwork.id}`}
+            className="block w-full"
+          >
+            <div className="w-full h-[calc(100vh-180px)] overflow-hidden">
+              <img
+                src={mainArtwork.image}
+                alt={mainArtwork.title}
+                className="block w-full h-full object-cover"
+              />
             </div>
+          </Link>
+        </section>
+
+        {/* SMALL IMAGES */}
+        <section>
+          <div className="grid grid-cols-2 gap-3">
+
+            {otherArtwork.map((item) => (
+              <Link
+                key={item.id}
+                to={`/key-art/${item.id}`}
+                className="block w-full"
+              >
+                <div className="w-full h-[220px] overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="block w-full h-full object-cover"
+                  />
+                </div>
+              </Link>
+            ))}
+
+          </div>
+        </section>
+
+      </div>
+
+
+      {/* ================= DESKTOP ================= */}
+      <div className="hidden md:block">
+
+        <div className="grid grid-cols-3 gap-5">
+
+          {artwork.map((item) => (
+            <Link
+              key={item.id}
+              to={`/key-art/${item.id}`}
+              className="block w-full"
+            >
+              <div className="w-full h-[500px] overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="block w-full h-full object-cover"
+                />
+              </div>
+            </Link>
           ))}
+
         </div>
 
       </div>
 
-
-      {/* DESKTOP */}
-      <div className="hidden md:grid md:grid-cols-3 gap-4">
-        {artwork.map((item) => (
-          <div key={item.id} className="w-full">
-            <ArtworkCard artwork={item} />
-          </div>
-        ))}
-      </div>
-
-    </section>
+    </main>
   );
 }
 
