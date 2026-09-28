@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<ArtworkGallery />} />
         <Route path="/key-art" element={<ArtworkGallery />} />
         <Route path="/av" element={<Av />} />
-        <Route path="/contact" element={<Contacts />} />
+        <Route path="/contacts" element={<Contacts />} />
       </Routes>
     </main>
   );
