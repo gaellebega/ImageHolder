@@ -10,10 +10,10 @@ function Navbar() {
   return (
     <nav className="w-full bg-white px-8 py-6">
 
-      {/* Top Navbar */}
+      {/* TOP NAVBAR */}
       <div className="relative z-50 flex items-center justify-between">
 
-        {/* Empire Design Logo */}
+        {/* LOGO */}
         <Link
           to="/"
           onClick={() => setMenuOpen(false)}
@@ -22,7 +22,7 @@ function Navbar() {
           EMPIRE DESIGN.
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* DESKTOP NAVIGATION */}
         <div className="hidden md:flex w-96 items-center justify-evenly text-black text-[17px]">
           <Link to="/key-art" className={linkStyle}>
             Key Art
@@ -37,7 +37,7 @@ function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* MOBILE MENU BUTTON */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden relative w-10 h-10 flex items-center justify-center cursor-pointer"
@@ -49,7 +49,7 @@ function Navbar() {
               ×
             </span>
           ) : (
-            /* Two-line hamburger */
+            /* HAMBURGER */
             <span className="flex flex-col gap-2">
               <span className="w-8 h-[2px] bg-black"></span>
               <span className="w-8 h-[2px] bg-black"></span>
@@ -58,11 +58,12 @@ function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Full-Screen Menu */}
+      {/* MOBILE FULL-SCREEN MENU */}
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-white flex items-center justify-center">
 
           <div className="flex flex-col items-center gap-10 text-black text-4xl">
+
             <Link
               to="/key-art"
               onClick={() => setMenuOpen(false)}
@@ -80,14 +81,14 @@ function Navbar() {
             </Link>
 
             <Link
-              to="/contacts"
+              to="/contact"
               onClick={() => setMenuOpen(false)}
               className={linkStyle}
             >
               Contact
             </Link>
-          </div>
 
+          </div>
         </div>
       )}
     </nav>

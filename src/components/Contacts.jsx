@@ -10,56 +10,62 @@ function Contacts() {
 
       <div className="w-full">
 
-        {/* KIGALI */}
-        <div className="mb-12">
-          <h1 className="font-sans text-[18px] font-light uppercase tracking-[0.4em] mb-6">
-            Kigali
-          </h1>
+        {/* CONTACT INFORMATION */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
 
-          <div className="font-sans text-[16px] font-light tracking-[0.06em] leading-8">
-            <p>cityofkigali@gmail.com</p>
-            <p>KG 7 Avenue, Kigali, Rwanda</p>
-            <p>+250 788 456 789</p>
+          {/* KIGALI */}
+          <div>
+            <h1 className="font-sans text-[16px] font-light uppercase tracking-[0.4em] mb-6">
+              Kigali
+            </h1>
+
+            <div className="font-sans text-[15px] font-light tracking-[0.06em] leading-8 text-black/70">
+              <p>cityofkigali@gmail.com</p>
+              <p>KG 7 Avenue, Kigali, Rwanda</p>
+              <p>+250 788 456 789</p>
+            </div>
           </div>
-        </div>
 
-        {/* PHYSICAL PLACE */}
-        <div className="mb-12">
-          <h2 className="font-sans text-[18px] font-light uppercase tracking-[0.4em] mb-6">
-            Physical Place
-          </h2>
+          {/* PHYSICAL PLACE */}
+          <div>
+            <h2 className="font-sans text-[16px] font-light uppercase tracking-[0.4em] mb-6">
+              Physical Place
+            </h2>
 
-          <p className="font-sans text-[16px] font-light tracking-[0.06em]">
-            Kigali Creative House
-          </p>
-        </div>
-
-        {/* SOCIALS */}
-        <div className="mb-12">
-          <h2 className="font-sans text-[18px] font-light uppercase tracking-[0.4em] mb-6">
-            Socials
-          </h2>
-
-          <div className="font-sans text-[16px] font-light tracking-[0.06em] leading-8">
-            <p>Twitter</p>
-            <p>Pinterest</p>
-            <p>Instagram</p>
+            <p className="font-sans text-[15px] font-light tracking-[0.06em] text-black/70">
+              Kigali Creative House
+            </p>
           </div>
+
+          {/* SOCIALS */}
+          <div>
+            <h2 className="font-sans text-[16px] font-light uppercase tracking-[0.4em] mb-6">
+              Socials
+            </h2>
+
+            <div className="font-sans text-[15px] font-light tracking-[0.06em] leading-8 text-black/70">
+              <p>Twitter</p>
+              <p>Pinterest</p>
+              <p>Instagram</p>
+            </div>
+          </div>
+
         </div>
 
         {/* FOOTER */}
-        <footer className="flex items-center justify-between pt-6">
+        <footer className="flex items-center justify-between pt-20">
 
-          <p className="font-sans text-[13px] font-light text-gray-400">
+          <p className="font-sans text-[13px] font-light text-black/40">
             © 2026 Empire Design
           </p>
 
-          <div className="flex items-center gap-5 text-gray-400">
+          <div className="flex items-center gap-5 text-black/50">
 
             <a
               href="https://www.instagram.com/empiredesign"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram"
             >
               <FaInstagram size={17} />
             </a>
@@ -68,6 +74,7 @@ function Contacts() {
               href="https://www.pinterest.com/empiredesign"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Pinterest"
             >
               <FaPinterestP size={17} />
             </a>
@@ -76,6 +83,7 @@ function Contacts() {
               href="https://www.linkedin.com/company/empire-design"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
             >
               <FaLinkedinIn size={17} />
             </a>

@@ -4,6 +4,7 @@ import ArtworkGallery from "./components/ArtworkGallery";
 import Navbar from "./components/Navbar";
 import Av from "./components/Av";
 import Contacts from "./components/Contacts";
+import ArtworkDetails from "./components/ArtworkDetails";
 
 function App() {
   return (
@@ -12,9 +13,17 @@ function App() {
 
       <Routes>
         <Route path="/" element={<ArtworkGallery />} />
+
         <Route path="/key-art" element={<ArtworkGallery />} />
+
+        <Route
+          path="/key-art/:id"
+          element={<ArtworkDetails />}
+        />
+
         <Route path="/av" element={<Av />} />
-        <Route path="/contacts" element={<Contacts />} />
+
+        <Route path="/contact" element={<Contacts />} />
       </Routes>
     </main>
   );
