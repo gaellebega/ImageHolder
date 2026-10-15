@@ -1,8 +1,3 @@
-import image1 from "../images/image1.jpg";
-import image2 from "../images/image2.jpg";
-import image3 from "../images/image3.jpg";
-import image4 from "../images/image4.jpg";
-
 const artwork = [
   {
     id: 1,
@@ -10,37 +5,37 @@ const artwork = [
     year: "2026",
     director: "Director Name",
     client: "A24",
-    image: image1,
+    image: "https://tetpnizvaecinhivkotc.supabase.co/storage/v1/object/public/artwork/image1.jpg",
   },
   {
     id: 2,
     title: "Artwork 2",
-    image: image2,
+    image: "https://tetpnizvaecinhivkotc.supabase.co/storage/v1/object/public/artwork/image2.jpg",
   },
   {
     id: 3,
     title: "Artwork 3",
-    image: image3,
+    image: "https://tetpnizvaecinhivkotc.supabase.co/storage/v1/object/public/artwork/image3.jpg",
   },
   {
     id: 4,
     title: "Artwork 4",
-    image: image4,
+    image: "https://tetpnizvaecinhivkotc.supabase.co/storage/v1/object/public/artwork/image4.jpg",
   },
   {
     id: 5,
     title: "Artwork 5",
-    image: image1,
+    image: "https://tetpnizvaecinhivkotc.supabase.co/storage/v1/object/public/artwork/image5.jpg",
   },
   {
     id: 6,
     title: "Artwork 6",
-    image: image2,
+    image: "https://tetpnizvaecinhivkotc.supabase.co/storage/v1/object/public/artwork/image6.jpg",
   },
   {
     id: 7,
     title: "Artwork 7",
-    image: image3,
+    image: "https://tetpnizvaecinhivkotc.supabase.co/storage/v1/object/public/artwork/image1.jpg",
   },
 ];
 

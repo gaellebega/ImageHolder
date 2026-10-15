@@ -15,7 +15,7 @@ function ArtworkDetails() {
           Artwork not found.
         </h1>
 
-        <Link
+        <Link 
           to="/key-art"
           className="inline-block mt-6 font-sans text-sm underline"
         >
